@@ -47,7 +47,7 @@ async def cmd_help(callback: CallbackQuery):
 @dp.callback_query(F.data == "kremli_tort")
 async def cmd_kremli_tort(callback: CallbackQuery):
     phot = FSInputFile("images/kremli.jpg")
-    await callback.answer_photo(photo=phot, caption= f"Kremli tort tanlandi!\n Bu tortning narxi 120.000 so'm\n", reply_markup=buyurtma)
+    await callback.message.answer_photo(photo=phot, caption=f"Kremli tort tanlandi!\n Bu tortning narxi 120.000 so'm\n", reply_markup=buyurtma)
     log_action(callback.from_user, "Kremli tort tanlandi")
 
 @dp.callback_query(F.data == "mevali_tort")
